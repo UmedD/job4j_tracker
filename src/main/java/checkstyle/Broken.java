@@ -7,10 +7,13 @@ public class Broken {
     private String name;
     private String surname;
 
-    Broken() { }
-    void echo() { }
-    void method() { }
-    void media(Object obj) {
+    public Broken() { }
+
+    public void echo() { }
+
+    public void method() { }
+
+    public void media(Object obj) {
         if (obj != null) {
             System.out.println(obj);
         }
