@@ -19,16 +19,12 @@ public class Calculator {
         return n / x;
     }
 
-    public void sumAllOperation(int n) {
-        System.out.println(sum(n));
-        System.out.println(multiply(n));
-        System.out.println(minus(n));
-        System.out.println(divide(n));
-        System.out.println("Summ all operation: = " + (sum(n) + multiply(n) + minus(n) + divide(n)));
+    public double sumAllOperation(int n) {
+        return sum(n) + multiply(n) + minus(n) + divide(n);
     }
 
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
-        calculator.sumAllOperation(10);
+        System.out.println(calculator.sumAllOperation(10));
     }
 }
