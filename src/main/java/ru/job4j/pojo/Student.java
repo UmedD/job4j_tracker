@@ -1,0 +1,33 @@
+package ru.job4j.pojo;
+
+import java.util.Date;
+
+public class Student {
+    private String fio;
+    private int group;
+    private Date dateReceipt;
+
+    public String getFio() {
+        return fio;
+    }
+
+    public void setFio(String fio) {
+        this.fio = fio;
+    }
+
+    public int getGroup() {
+        return group;
+    }
+
+    public void setGroup(int group) {
+        this.group = group;
+    }
+
+    public Date getDateReceipt() {
+        return dateReceipt;
+    }
+
+    public void setDateReceipt(Date dateReceipt) {
+        this.dateReceipt = dateReceipt;
+    }
+}
