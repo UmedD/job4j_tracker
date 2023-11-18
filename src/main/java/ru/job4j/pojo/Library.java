@@ -12,9 +12,22 @@ public class Library {
         books[2] = book3;
         books[3] = book4;
 
-        for (int index = 0; index < books.length; index++) {
-            Book bk = books[index];
+        for (Book bk : books) {
             System.out.println("название книги : " + bk.getName() + " количество старниц = " + bk.getNumPages());
+        }
+
+        Book temp = books[0];
+        books[0] = books[3];
+        books[3] = temp;
+
+        for (Book bk : books) {
+            System.out.println("название книги : " + bk.getName() + " количество старниц = " + bk.getNumPages());
+        }
+
+        for (Book book : books) {
+            if (book.getName().equals("Clean Code")) {
+                System.out.println(book.getName());
+            }
         }
     }
 }
