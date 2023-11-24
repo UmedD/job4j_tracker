@@ -40,9 +40,8 @@ public class Tracker {
         if (rsl) {
             items[index] = item;
             item.setId(id);
-            return true;
         }
-        return false;
+        return rsl;
     }
 
     private int indexOf(int id) {
