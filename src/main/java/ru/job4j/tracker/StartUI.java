@@ -9,17 +9,17 @@ public class StartUI {
         this.output = output;
     }
 
-    public void init(Input input, Tracker tracker, User[] actions) {
+    public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
             showMenu(actions);
             int select = input.askInt("Выбрать: ");
-            User action = actions[select];
+            UserAction action = actions[select];
             run = action.execute(input, tracker);
         }
     }
 
-    public void showMenu(User[] actions) {
+    public void showMenu(UserAction[] actions) {
         output.println("Меню:");
         for (int i = 0; i < actions.length; i++) {
             output.println(i + ". " + actions[i].name());
@@ -30,7 +30,7 @@ public class StartUI {
         Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
-        User[] actions = {
+        UserAction[] actions = {
                 new Create(output),
                 new FindAll(output),
                 new Replace(output),
