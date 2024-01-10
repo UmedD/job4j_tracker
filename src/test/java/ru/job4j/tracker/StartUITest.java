@@ -104,9 +104,8 @@ class StartUITest {
     void whenFindAllItemTestOutputIsSuccessfully() {
         Output output = new StubOutput();
         Tracker tracker = new Tracker();
-        Item one = new Item();
         Input input = new MockInput(
-                new String[]{String.valueOf(one.getId()), "1"}
+                new String[]{"0", "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new FindAll(output),
