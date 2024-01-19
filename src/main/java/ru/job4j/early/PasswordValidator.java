@@ -8,29 +8,33 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Password can't be null");
         }
 
+        if (password.length() < 8 || password.length() > 32) {
+            throw new IllegalArgumentException("Password should be length [8, 32]");
+        }
+
         boolean hasUpCase = false;
         boolean hasLowCase = false;
         boolean hasDigit = false;
         boolean hasSpecial = false;
         for (char symbol : password.toCharArray()) {
-            if (password.length() < 8 || password.length() > 32) {
-                throw new IllegalArgumentException("Password should be length [8, 32]");
-            }
-
-            if (symbol >= 65 && symbol <= 90) {
+            if (Character.isUpperCase(symbol)) {
                 hasUpCase = true;
             }
 
-            if (symbol >= 97 && symbol <= 122) {
+            if (Character.isLowerCase(symbol)) {
                 hasLowCase = true;
             }
 
-            if (symbol >= 48 && symbol <= 57) {
+            if (Character.isDigit(symbol)) {
                 hasDigit = true;
             }
 
-            if (password.matches(".*[!@#$%^&*()\\[\\]{};:,.<>?/\\\\|\\-+=].*")) {
+            if (!Character.isLetterOrDigit(symbol)) {
                 hasSpecial = true;
+            }
+
+            if (hasUpCase && hasLowCase && hasDigit && hasSpecial) {
+                break;
             }
         }
 
